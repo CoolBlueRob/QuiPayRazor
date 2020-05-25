@@ -1,0 +1,37 @@
+﻿@page
+@model QuiPayRazor.Pages.ExchangeRates.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Currency</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Currency.CurrencyState)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Currency.CurrencyState)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Currency.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Currency.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Currency.WhenCreated)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Currency.WhenCreated)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Currency.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,64 @@
+﻿@page
+@model QuiPayRazor.Pages.Payments.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Payment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Payment.PaymentState" class="control-label"></label>
+                <select asp-for="Payment.PaymentState" class="form-control"></select>
+                <span asp-validation-for="Payment.PaymentState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment.FromAccountID" class="control-label"></label>
+                <input asp-for="Payment.FromAccountID" class="form-control" />
+                <span asp-validation-for="Payment.FromAccountID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment.ToAccountID" class="control-label"></label>
+                <input asp-for="Payment.ToAccountID" class="form-control" />
+                <span asp-validation-for="Payment.ToAccountID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment.WhenProposed" class="control-label"></label>
+                <input asp-for="Payment.WhenProposed" class="form-control" />
+                <span asp-validation-for="Payment.WhenProposed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment.WhenAccepted" class="control-label"></label>
+                <input asp-for="Payment.WhenAccepted" class="form-control" />
+                <span asp-validation-for="Payment.WhenAccepted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment.WhenDeclined" class="control-label"></label>
+                <input asp-for="Payment.WhenDeclined" class="form-control" />
+                <span asp-validation-for="Payment.WhenDeclined" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment.RefundPaymentID" class="control-label"></label>
+                <input asp-for="Payment.RefundPaymentID" class="form-control" />
+                <span asp-validation-for="Payment.RefundPaymentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

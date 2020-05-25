@@ -1,0 +1,72 @@
+﻿@page
+@model QuiPayRazor.Pages.Payments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].PaymentState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].FromAccountID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].ToAccountID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].WhenProposed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].WhenAccepted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].WhenDeclined)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].RefundPaymentID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Payment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromAccountID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToAccountID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WhenProposed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WhenAccepted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WhenDeclined)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefundPaymentID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

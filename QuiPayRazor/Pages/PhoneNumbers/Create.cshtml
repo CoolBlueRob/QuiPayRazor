@@ -1,0 +1,43 @@
+﻿@page
+@model QuiPayRazor.Pages.PhoneNumbers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PhoneNumber</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber.AddressTyoe" class="control-label"></label>
+                <select asp-for="PhoneNumber.AddressTyoe" class="form-control"></select>
+                <span asp-validation-for="PhoneNumber.AddressTyoe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber.Phone" class="control-label"></label>
+                <input asp-for="PhoneNumber.Phone" class="form-control" />
+                <span asp-validation-for="PhoneNumber.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber.MemberIdentityID" class="control-label"></label>
+                <select asp-for="PhoneNumber.MemberIdentityID" class ="form-control" asp-items="ViewBag.MemberIdentityID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

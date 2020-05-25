@@ -1,0 +1,80 @@
+﻿@page
+@model QuiPayRazor.Pages.Addresses.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Address</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Address.ID" />
+            <div class="form-group">
+                <label asp-for="Address.AddressTyoe" class="control-label"></label>
+                <select asp-for="Address.AddressTyoe" class="form-control"></select>
+                <span asp-validation-for="Address.AddressTyoe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Address1" class="control-label"></label>
+                <input asp-for="Address.Address1" class="form-control" />
+                <span asp-validation-for="Address.Address1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Address2" class="control-label"></label>
+                <input asp-for="Address.Address2" class="form-control" />
+                <span asp-validation-for="Address.Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Address3" class="control-label"></label>
+                <input asp-for="Address.Address3" class="form-control" />
+                <span asp-validation-for="Address.Address3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.City" class="control-label"></label>
+                <input asp-for="Address.City" class="form-control" />
+                <span asp-validation-for="Address.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.State" class="control-label"></label>
+                <input asp-for="Address.State" class="form-control" />
+                <span asp-validation-for="Address.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.CountryCode" class="control-label"></label>
+                <input asp-for="Address.CountryCode" class="form-control" />
+                <span asp-validation-for="Address.CountryCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.ZipCode" class="control-label"></label>
+                <input asp-for="Address.ZipCode" class="form-control" />
+                <span asp-validation-for="Address.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.WhenCreated" class="control-label"></label>
+                <input asp-for="Address.WhenCreated" class="form-control" />
+                <span asp-validation-for="Address.WhenCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.MemberIdentityID" class="control-label"></label>
+                <select asp-for="Address.MemberIdentityID" class="form-control" asp-items="ViewBag.MemberIdentityID"></select>
+                <span asp-validation-for="Address.MemberIdentityID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
