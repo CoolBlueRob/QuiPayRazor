@@ -21,7 +21,6 @@ namespace QuiPayRazor.Pages.Accounts
 
         public IActionResult OnGet()
         {
-        ViewData["CurrencyID"] = new SelectList(_context.Set<Currency>(), "ID", "ID");
             return Page();
         }
 

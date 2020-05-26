@@ -23,8 +23,7 @@ namespace QuiPayRazor.Pages.Accounts
 
         public async Task OnGetAsync()
         {
-            Account = await _context.Account
-                .Include(a => a.Balance).ToListAsync();
+            Account = await _context.Account.ToListAsync();
         }
     }
 }

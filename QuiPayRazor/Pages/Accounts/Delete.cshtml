@@ -19,16 +19,28 @@
             @Html.DisplayFor(model => model.Account.AccountState)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.Balance)
+            @Html.DisplayNameFor(model => model.Account.AccountType)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.Balance.ID)
+            @Html.DisplayFor(model => model.Account.AccountType)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.MemberID)
+            @Html.DisplayNameFor(model => model.Account.Name)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.MemberID)
+            @Html.DisplayFor(model => model.Account.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Account.CurrencyID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Account.CurrencyID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Account.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Account.Amount)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Account.WhenCreated)

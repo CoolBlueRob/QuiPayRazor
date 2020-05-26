@@ -13,7 +13,7 @@ namespace QuiPayRazor.Models
         [Key]
         public int ID { get; set; }
 
-        public AddressTyoe AddressTyoe { get; set; }
+        public HomeBusinessOther AddressTyoe { get; set; }
 
         public string Email { get; set; }
 

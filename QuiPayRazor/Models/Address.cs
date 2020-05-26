@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuiPayRazor.Models
 {
-    public enum AddressTyoe
+    public enum HomeBusinessOther
     {
         Home, Business, Other
     };
@@ -18,7 +18,7 @@ namespace QuiPayRazor.Models
         [Key]
         public int ID { get; set; }
 
-        public AddressTyoe AddressTyoe { get; set; }
+        public HomeBusinessOther AddressTyoe { get; set; }
 
         public string Address1 { get; set; }
 

@@ -20,6 +20,16 @@ namespace QuiPayRazor.Models
 
         public string Name { get; set; }
 
+        public string Symbol { get; set; }
+
+        public string Note { get; set; }
+
+        public string NoteSymbol { get; set; }
+
+        public string Coin { get; set; }
+
+        public string CoinSymbol { get; set; }
+
         public DateTime WhenCreated { get; set; }
     }
 }

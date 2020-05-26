@@ -28,7 +28,14 @@ namespace QuiPayRazor.Pages.Members
                 return NotFound();
             }
 
-            Member = await _context.Member.FirstOrDefaultAsync(m => m.ID == id);
+            // Member = await _context.Member.FirstOrDefaultAsync(m => m.ID == id);
+
+            Member = await _context.Member
+                .Include(m => m.MemberIdentitys)
+                .ThenInclude(mi => mi.Addresses)
+                .Include(m => m.Accounts)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Member == null)
             {

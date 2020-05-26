@@ -22,6 +22,6 @@ namespace QuiPayRazor.Models
 
         public ICollection<Account> Accounts { get; set; }
 
-        public ICollection<MemberIdentity> MemberDetails { get; set; }
+        public ICollection<MemberIdentity> MemberIdentitys { get; set; }
     }
 }

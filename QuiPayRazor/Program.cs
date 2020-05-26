@@ -31,7 +31,8 @@ namespace QuiPayRazor
                 try
                 {
                     var context = services.GetRequiredService<QuiPayRazorContext>();
-                    context.Database.EnsureCreated();
+                    DbInitializer.Initialize(context); 
+                    //context.Database.EnsureCreated();
                 }
                 catch (Exception ex)
                 {

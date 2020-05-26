@@ -29,8 +29,7 @@ namespace QuiPayRazor.Pages.Accounts
                 return NotFound();
             }
 
-            Account = await _context.Account
-                .Include(a => a.Balance).FirstOrDefaultAsync(m => m.ID == id);
+            Account = await _context.Account.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Account == null)
             {
