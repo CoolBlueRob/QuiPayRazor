@@ -21,19 +21,25 @@ namespace QuiPayRazor.Pages.Members
 
         [BindProperty]
         public Member Member { get; set; }
+        public string ErrorMessage { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Member = await _context.Member.FirstOrDefaultAsync(m => m.ID == id);
+            Member = await _context.Member.AsNoTracking().FirstOrDefaultAsync(m => m.ID == id);
 
             if (Member == null)
             {
                 return NotFound();
+            }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ErrorMessage = "Delete failed. Try again";
             }
             return Page();
         }
@@ -45,15 +51,37 @@ namespace QuiPayRazor.Pages.Members
                 return NotFound();
             }
 
-            Member = await _context.Member.FindAsync(id);
+            //    Member = await _context.Member.FindAsync(id);
 
-            if (Member != null)
+            //    if (Member != null)
+            //    {
+            //        _context.Member.Remove(Member);
+            //        await _context.SaveChangesAsync();
+            //    }
+
+            //    return RedirectToPage("./Index");
+
+            var member = await _context.Member
+                            .AsNoTracking()
+                            .FirstOrDefaultAsync(m => m.ID == id);
+
+            if (member == null)
             {
-                _context.Member.Remove(Member);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
 
-            return RedirectToPage("./Index");
+            try
+            {
+                _context.Member.Remove(member);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+                return RedirectToAction("./Delete",
+                                     new { id, saveChangesError = true });
+            }
         }
     }
 }

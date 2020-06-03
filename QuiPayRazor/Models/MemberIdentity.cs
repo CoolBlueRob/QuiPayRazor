@@ -18,6 +18,9 @@ namespace QuiPayRazor.Models
         [Key]
         public int ID { get; set; }
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
         public MemberDetailsState MemberDetailsState { get; set; }
 
         public string Title { get; set; }
@@ -28,6 +31,8 @@ namespace QuiPayRazor.Models
 
         public int MemberID { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime WhenCreated { get; set; }
 
         public virtual Member Member { get; set; }

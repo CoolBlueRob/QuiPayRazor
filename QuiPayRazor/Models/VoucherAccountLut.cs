@@ -16,11 +16,18 @@ namespace QuiPayRazor.Models
         [Key]
         public int ID { get; set; }
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
         public BankNoteAccountLutState BankNoteAccountLutState { get; set; }
 
         public int BankNoteID { get; set; }
 
         public int AccountID { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime WhenCreated { get; set; }
 
         public virtual Voucher BankNote { get; set;}
 

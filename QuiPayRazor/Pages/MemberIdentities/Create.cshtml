@@ -14,11 +14,6 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="MemberIdentity.MemberDetailsState" class="control-label"></label>
-                <select asp-for="MemberIdentity.MemberDetailsState" class="form-control"></select>
-                <span asp-validation-for="MemberIdentity.MemberDetailsState" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="MemberIdentity.Title" class="control-label"></label>
                 <input asp-for="MemberIdentity.Title" class="form-control" />
                 <span asp-validation-for="MemberIdentity.Title" class="text-danger"></span>
@@ -32,15 +27,6 @@
                 <label asp-for="MemberIdentity.LastName" class="control-label"></label>
                 <input asp-for="MemberIdentity.LastName" class="form-control" />
                 <span asp-validation-for="MemberIdentity.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MemberIdentity.MemberID" class="control-label"></label>
-                <select asp-for="MemberIdentity.MemberID" class ="form-control" asp-items="ViewBag.MemberID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="MemberIdentity.WhenCreated" class="control-label"></label>
-                <input asp-for="MemberIdentity.WhenCreated" class="form-control" />
-                <span asp-validation-for="MemberIdentity.WhenCreated" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

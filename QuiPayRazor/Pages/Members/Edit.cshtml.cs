@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.Members
                 return NotFound();
             }
 
-            Member = await _context.Member.FirstOrDefaultAsync(m => m.ID == id);
+            Member = await _context.Member.FindAsync(id);
 
             if (Member == null)
             {

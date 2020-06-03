@@ -16,6 +16,9 @@ namespace QuiPayRazor.Models
         [Key]
         public int ID { get; set; }
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
         public MemberState MemberState { get; set; }
 
         public DateTime WhenCreated { get; set; }

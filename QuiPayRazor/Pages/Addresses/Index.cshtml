@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Address[0].AddressTyoe)
+                @Html.DisplayNameFor(model => model.Address[0].AddressType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Address[0].Address1)
@@ -26,10 +26,14 @@
                 @Html.DisplayNameFor(model => model.Address[0].Address3)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address[0].City)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CitySort">
+                    @Html.DisplayNameFor(model => model.Address[0].City)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address[0].State)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.StateSort">
+                    @Html.DisplayNameFor(model => model.Address[0].State)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Address[0].CountryCode)
@@ -50,7 +54,7 @@
 @foreach (var item in Model.Address) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.AddressTyoe)
+                @Html.DisplayFor(modelItem => item.AddressType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Address1)

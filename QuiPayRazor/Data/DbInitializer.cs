@@ -71,7 +71,7 @@ namespace QuiPayRazor.Data
 
             var addresses = new Address[]
             {
-                    new Address{ AddressTyoe = HomeBusinessOther.Home,
+                    new Address{ AddressType = HomeBusinessOther.Home,
                         Address1 = "Home",
                         Address2 = "Home Road",
                         City = "Home Town",
@@ -82,7 +82,7 @@ namespace QuiPayRazor.Data
                         MemberIdentityID = 1
                     },
 
-                    new Address{ AddressTyoe = HomeBusinessOther.Home,
+                    new Address{ AddressType = HomeBusinessOther.Home,
                         Address1 = "5",
                         Address2 = "Any Road",
                         City = "Any Town",
@@ -93,7 +93,7 @@ namespace QuiPayRazor.Data
                         MemberIdentityID = 2
                     },
 
-                    new Address{ AddressTyoe = HomeBusinessOther.Business,
+                    new Address{ AddressType = HomeBusinessOther.Business,
                         Address1 = "1",
                         Address2 = "Bill Road",
                         City = "Bill Town",

@@ -14,6 +14,14 @@ namespace QuiPayRazor.Pages.MemberIdentities
     {
         private readonly QuiPayRazor.Data.QuiPayRazorContext _context;
 
+        public class CreateViewModel
+        {
+            public string Title { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+        }
+
+
         public CreateModel(QuiPayRazor.Data.QuiPayRazorContext context)
         {
             _context = context;
@@ -26,7 +34,7 @@ namespace QuiPayRazor.Pages.MemberIdentities
         }
 
         [BindProperty]
-        public MemberIdentity MemberIdentity { get; set; }
+        public CreateViewModel MemberIdentity { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -36,8 +44,13 @@ namespace QuiPayRazor.Pages.MemberIdentities
             {
                 return Page();
             }
-
-            _context.MemberIdentity.Add(MemberIdentity);
+            
+            var newIdentity = new MemberIdentity();
+            newIdentity.WhenCreated = DateTime.Now;
+            newIdentity.MemberDetailsState = MemberDetailsState.Pending;
+            newIdentity.MemberID = 1;
+            var entry = _context.Add(newIdentity);
+            entry.CurrentValues.SetValues(MemberIdentity);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

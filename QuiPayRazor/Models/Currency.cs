@@ -16,6 +16,9 @@ namespace QuiPayRazor.Models
         [Key]
         public int ID { get; set; }
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
         public CurrencyState CurrencyState { get; set; }
 
         public string Name { get; set; }
@@ -30,6 +33,8 @@ namespace QuiPayRazor.Models
 
         public string CoinSymbol { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime WhenCreated { get; set; }
     }
 }

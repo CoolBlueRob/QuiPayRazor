@@ -10,5 +10,12 @@ namespace QuiPayRazor.Models
     {
         [Key]
         public int ID { get; set; }
+
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime WhenCreated { get; set; }
     }
 }

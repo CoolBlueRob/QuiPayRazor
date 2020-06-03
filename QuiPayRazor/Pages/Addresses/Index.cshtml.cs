@@ -21,10 +21,35 @@ namespace QuiPayRazor.Pages.Addresses
 
         public IList<Address> Address { get;set; }
 
-        public async Task OnGetAsync()
+        public string CitySort { get; set; }
+        public string StateSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
+
+        public async Task OnGetAsync( string sortOrder )
         {
-            Address = await _context.Address
-                .Include(a => a.MemberIdentity).ToListAsync();
+            CitySort = String.IsNullOrEmpty(sortOrder) ? "city_desc" : "";
+            StateSort = sortOrder == "state" ? "state_desc" : "state";
+
+            IQueryable<Address> iqAddress = from a in _context.Address
+                                            select a;
+            switch (sortOrder)
+            {
+                case "city_desc":
+                    iqAddress = iqAddress.OrderByDescending(s => s.City);
+                    break;
+                case "state":
+                    iqAddress = iqAddress.OrderBy(s => s.State);
+                    break;
+                case "state_desc":
+                    iqAddress = iqAddress.OrderByDescending(s => s.State);
+                    break;
+                default:
+                    iqAddress = iqAddress.OrderBy(s => s.AddressType);
+                    break;
+            }
+
+            Address = await iqAddress.AsNoTracking().ToListAsync();
         }
     }
 }
