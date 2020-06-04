@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.EmailAddress[0].AddressTyoe)
+                @Html.DisplayNameFor(model => model.EmailAddress[0].AddressType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.EmailAddress[0].Email)
@@ -29,7 +29,7 @@
 @foreach (var item in Model.EmailAddress) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.AddressTyoe)
+                @Html.DisplayFor(modelItem => item.AddressType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)

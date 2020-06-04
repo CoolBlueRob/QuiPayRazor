@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace QuiPayRazor.Models
 {
-    public enum HomeBusinessOther
+    public enum PersonalOrBusiness
     {
-        Home, Business, Other
+        [Display(Name = "Personal")]
+        Personal,
+        
+        [Display(Name = "Business")] 
+        Business
     };
 
     public class Address
@@ -21,7 +25,7 @@ namespace QuiPayRazor.Models
         [Timestamp]
         public byte[] RowVersion { get; set; }
 
-        public HomeBusinessOther AddressType { get; set; }
+        public PersonalOrBusiness AddressType { get; set; }
 
         [StringLength(80)]
         public string Address1 { get; set; }

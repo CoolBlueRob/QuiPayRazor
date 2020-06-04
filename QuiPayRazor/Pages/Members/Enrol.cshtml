@@ -1,0 +1,104 @@
+﻿@page
+@model QuiPayRazor.Pages.Enrol.EnrolModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Enrolment.Title" class="control-label"></label>
+                <input asp-for="Enrolment.Title" class="form-control" />
+                <span asp-validation-for="Enrolment.Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Enrolment.FirstName" class="control-label"></label>
+                <input asp-for="Enrolment.FirstName" class="form-control" />
+                <span asp-validation-for="Enrolment.FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Enrolment.LastName" class="control-label"></label>
+                <input asp-for="Enrolment.LastName" class="form-control" />
+                <span asp-validation-for="Enrolment.LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Enrolment.AddressType" class="control-label"></label>
+                <select asp-for="Enrolment.AddressType" class="form-control"
+                        asp-items="Html.GetEnumSelectList<QuiPayRazor.Models.PersonalOrBusiness>()">
+                        @*asp-items="@Model.AddressTypeSL">*@
+                    <option value="">-- Select Address Type --</option>
+                </select>
+                <span asp-validation-for="Enrolment.AddressType" class="text-danger"></span>
+            </div>
+    
+            <div class="form-group">
+                <label asp-for="Enrolment.Address1" class="control-label"></label>
+                <input asp-for="Enrolment.Address1" class="form-control" />
+                <span asp-validation-for="Enrolment.Address1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.Address2" class="control-label"></label>
+                <input asp-for="Enrolment.Address2" class="form-control" />
+                <span asp-validation-for="Enrolment.Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.Address3" class="control-label"></label>
+                <input asp-for="Enrolment.Address3" class="form-control" />
+                <span asp-validation-for="Enrolment.Address3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.City" class="control-label"></label>
+                <input asp-for="Enrolment.City" class="form-control" />
+                <span asp-validation-for="Enrolment.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.State" class="control-label"></label>
+                <input asp-for="Enrolment.State" class="form-control" />
+                <span asp-validation-for="Enrolment.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.CountryCode" class="control-label"></label>
+                <input asp-for="Enrolment.CountryCode" class="form-control" />
+                <span asp-validation-for="Enrolment.CountryCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.ZipCode" class="control-label"></label>
+                <input asp-for="Enrolment.ZipCode" class="form-control" />
+                <span asp-validation-for="Enrolment.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.Email" class="control-label"></label>
+                <input asp-for="Enrolment.Email" class="form-control" />
+                <span asp-validation-for="Enrolment.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enrolment.Phone" class="control-label"></label>
+                <input asp-for="Enrolment.Phone" class="form-control" />
+                <span asp-validation-for="Enrolment.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

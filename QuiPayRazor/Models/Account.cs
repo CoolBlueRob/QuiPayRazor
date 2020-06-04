@@ -21,7 +21,7 @@ namespace QuiPayRazor.Models
 
         public AccountState AccountState { get; set; }
 
-        public HomeBusinessOther AccountType { get; set; }
+        public PersonalOrBusiness AccountType { get; set; }
 
         [StringLength(50)]
         public string Name { get; set; }
@@ -37,5 +37,7 @@ namespace QuiPayRazor.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime WhenCreated { get; set; }
+
+        public virtual Currency Currency { get; set; }
     }
 }

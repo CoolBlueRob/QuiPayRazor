@@ -16,7 +16,7 @@ namespace QuiPayRazor.Models
         [Timestamp]
         public byte[] RowVersion { get; set; }
 
-        public HomeBusinessOther AddressTyoe { get; set; }
+        public PersonalOrBusiness AddressType { get; set; }
 
         public string Phone { get; set; }
 
