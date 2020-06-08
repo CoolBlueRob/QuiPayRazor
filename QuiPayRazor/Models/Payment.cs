@@ -25,8 +25,11 @@ namespace QuiPayRazor.Models
         public PaymentState PaymentState { get; set; }
 
         public int FromAccountID { get; set; }
-
+        
         public int ToAccountID { get; set; }
+
+        [StringLength(200)]
+        public string Note { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

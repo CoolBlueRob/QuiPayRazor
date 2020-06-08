@@ -39,10 +39,10 @@ namespace QuiPayRazor.Pages.Addresses
                     iqAddress = iqAddress.OrderByDescending(s => s.City);
                     break;
                 case "state":
-                    iqAddress = iqAddress.OrderBy(s => s.State);
+                    iqAddress = iqAddress.OrderBy(s => s.County);
                     break;
                 case "state_desc":
-                    iqAddress = iqAddress.OrderByDescending(s => s.State);
+                    iqAddress = iqAddress.OrderByDescending(s => s.County);
                     break;
                 default:
                     iqAddress = iqAddress.OrderBy(s => s.AddressType);

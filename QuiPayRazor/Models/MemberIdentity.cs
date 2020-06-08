@@ -23,10 +23,13 @@ namespace QuiPayRazor.Models
 
         public MemberDetailsState MemberDetailsState { get; set; }
 
+        [StringLength(20)]
         public string Title { get; set; }
 
+        [StringLength(50)]
         public string FirstName { get; set; }
 
+        [StringLength(50)]
         public string LastName { get; set; }
 
         public int MemberID { get; set; }

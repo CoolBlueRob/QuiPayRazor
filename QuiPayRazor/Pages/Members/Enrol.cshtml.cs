@@ -14,38 +14,60 @@ namespace QuiPayRazor.Pages.Enrol
     public class Enrolment
     {
         // Member Identity
+        [StringLength(20)]
+        [Display(Name = "Title",
+        Prompt = "Enter Title", Description = "Mr Mrs Miss etc")]
         public string Title { get; set; }
-
+        
+        [StringLength(50)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
+        [StringLength(50)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         // Address
+        [Display(Name = "Personal or Business")]
         public PersonalOrBusiness AddressType { get; set; }
 
         [StringLength(80)]
+        [Display(Name = "Address 1")]
         public string Address1 { get; set; }
 
         [StringLength(80)]
+        [Display(Name = "Address 2")]
         public string Address2 { get; set; }
 
         [StringLength(80)]
+        [Display(Name = "Address 3")]
         public string Address3 { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Town/City")]
         public string City { get; set; }
 
         [StringLength(50)]
-        public string State { get; set; }
+        [Display(Name = "County")]
+        public string County { get; set; }
 
         [StringLength(20)]
+        [Display(Name = "Post Code")]
+        [DataType(DataType.PostalCode)]
+        public string PostCode { get; set; }
+
+        [StringLength(20)]
+        [Display(Name = "Country")]
         public string CountryCode { get; set; }
 
-        [StringLength(20)]
-        public string ZipCode { get; set; }
-
+        [StringLength(80)]
+        [Display(Name = "Email Address")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [StringLength(40)]
+        [Display(Name = "Phone Number")]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
     }
 
@@ -61,11 +83,9 @@ namespace QuiPayRazor.Pages.Enrol
         [BindProperty]
         public Enrolment Enrolment { get; set; }
 
-        public SelectList AddressTypeSL { get; set; }
-
         public void OnGet()
         {
-            AddressTypeSL = new SelectList(new List<string> { "Personal", "Business" });
+      
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -84,9 +104,9 @@ namespace QuiPayRazor.Pages.Enrol
                 Address2 = Enrolment.Address2,
                 Address3 = Enrolment.Address3,
                 City = Enrolment.City,
-                State = Enrolment.State,
+                County = Enrolment.County,
                 CountryCode = Enrolment.CountryCode,
-                ZipCode = Enrolment.ZipCode,
+                PostCode = Enrolment.PostCode,
                 WhenCreated = now
 
             };

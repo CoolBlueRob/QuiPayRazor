@@ -40,13 +40,13 @@ namespace QuiPayRazor.Models
         public string City { get; set; }
 
         [StringLength(50)]
-        public string State { get; set; }
+        public string County { get; set; }
+
+        [StringLength(20)]
+        public string PostCode { get; set; }
 
         [StringLength(20)]
         public string CountryCode { get; set; }
-
-        [StringLength(20)]
-        public string ZipCode { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

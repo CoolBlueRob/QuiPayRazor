@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject CommonLocalizationService localizer
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,6 +10,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <h3>Culture: @localizer.Get("Culture")</h3>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">

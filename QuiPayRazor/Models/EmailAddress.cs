@@ -18,6 +18,7 @@ namespace QuiPayRazor.Models
 
         public PersonalOrBusiness AddressType { get; set; }
 
+        [StringLength(80)]
         public string Email { get; set; }
 
         [DataType(DataType.Date)]

@@ -21,16 +21,22 @@ namespace QuiPayRazor.Models
 
         public CurrencyState CurrencyState { get; set; }
 
+        [StringLength(40)]
         public string Name { get; set; }
 
+        [StringLength(8)]
         public string Symbol { get; set; }
 
+        [StringLength(8)]
         public string Note { get; set; }
 
+        [StringLength(8)]
         public string NoteSymbol { get; set; }
 
+        [StringLength(8)]
         public string Coin { get; set; }
 
+        [StringLength(8)]
         public string CoinSymbol { get; set; }
 
         [DataType(DataType.Date)]
