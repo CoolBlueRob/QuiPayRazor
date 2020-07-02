@@ -29,19 +29,25 @@
                 <span asp-validation-for="Account.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Account.MemberID" class="control-label"></label>
-                <select asp-for="Account.MemberID" class ="form-control" asp-items="ViewBag.MemberID"></select>
+                <label asp-for="Account.MemberId" class="control-label"></label>
+                <select asp-for="Account.MemberId" class="form-control" asp-items="ViewBag.MemberId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Account.CurrencyID" class="control-label"></label>
-                <input asp-for="Account.CurrencyID" class="form-control" />
-                <span asp-validation-for="Account.CurrencyID" class="text-danger"></span>
+                <label asp-for="Account.CurrencyId" class="control-label"></label>
+                <input asp-for="Account.CurrencyId" class="form-control" />
+                <span asp-validation-for="Account.CurrencyId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Account.Amount" class="control-label"></label>
-                <input asp-for="Account.Amount" class="form-control" />
-                <span asp-validation-for="Account.Amount" class="text-danger"></span>
+                <label asp-for="Account.Allocated" class="control-label"></label>
+                <input asp-for="Account.Allocated" class="form-control" />
+                <span asp-validation-for="Account.Allocated" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Account.Balance" class="control-label"></label>
+                <input asp-for="Account.Balance" class="form-control" />
+                <span asp-validation-for="Account.Balance" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Account.WhenCreated" class="control-label"></label>
                 <input asp-for="Account.WhenCreated" class="form-control" />

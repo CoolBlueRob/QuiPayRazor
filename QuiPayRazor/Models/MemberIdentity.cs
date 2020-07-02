@@ -16,7 +16,7 @@ namespace QuiPayRazor.Models
     public class MemberIdentity
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Timestamp]
         public byte[] RowVersion { get; set; }
@@ -32,7 +32,7 @@ namespace QuiPayRazor.Models
         [StringLength(50)]
         public string LastName { get; set; }
 
-        public int MemberID { get; set; }
+        public int MemberId { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

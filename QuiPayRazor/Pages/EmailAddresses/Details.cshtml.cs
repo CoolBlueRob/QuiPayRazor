@@ -29,7 +29,7 @@ namespace QuiPayRazor.Pages.EmailAddresses
             }
 
             EmailAddress = await _context.EmailAddress
-                .Include(e => e.MemberIdentity).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(e => e.MemberIdentity).FirstOrDefaultAsync(m => m.Id == id);
 
             if (EmailAddress == null)
             {

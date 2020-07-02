@@ -29,7 +29,7 @@ namespace QuiPayRazor.Pages.MemberTrusts
                 return NotFound();
             }
 
-            MemberTrust = await _context.MemberTrust.FirstOrDefaultAsync(m => m.ID == id);
+            MemberTrust = await _context.MemberTrust.FirstOrDefaultAsync(m => m.Id == id);
 
             if (MemberTrust == null)
             {

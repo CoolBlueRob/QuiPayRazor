@@ -29,7 +29,7 @@ namespace QuiPayRazor.Pages.Addresses
             }
 
             Address = await _context.Address
-                .Include(a => a.MemberIdentity).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(a => a.MemberIdentity).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Address == null)
             {

@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.MemberTrusts
                 return NotFound();
             }
 
-            MemberTrust = await _context.MemberTrust.FirstOrDefaultAsync(m => m.ID == id);
+            MemberTrust = await _context.MemberTrust.FirstOrDefaultAsync(m => m.Id == id);
 
             if (MemberTrust == null)
             {
@@ -56,7 +56,7 @@ namespace QuiPayRazor.Pages.MemberTrusts
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MemberTrustExists(MemberTrust.ID))
+                if (!MemberTrustExists(MemberTrust.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace QuiPayRazor.Pages.MemberTrusts
 
         private bool MemberTrustExists(int id)
         {
-            return _context.MemberTrust.Any(e => e.ID == id);
+            return _context.MemberTrust.Any(e => e.Id == id);
         }
     }
 }

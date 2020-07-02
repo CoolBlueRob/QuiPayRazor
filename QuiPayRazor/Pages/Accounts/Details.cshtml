@@ -30,16 +30,22 @@
             @Html.DisplayFor(model => model.Account.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.CurrencyID)
+            @Html.DisplayNameFor(model => model.Account.CurrencyId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.CurrencyID)
+            @Html.DisplayFor(model => model.Account.CurrencyId)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.Amount)
+            @Html.DisplayNameFor(model => model.Account.Allocated)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.Amount)
+            @Html.DisplayFor(model => model.Account.Allocated)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Account.Balance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Account.Balance)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Account.WhenCreated)
@@ -50,6 +56,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Account.ID">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.Account.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

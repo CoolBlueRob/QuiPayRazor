@@ -132,14 +132,14 @@
   <data name="Country Code" xml:space="preserve">
     <value>Código de País</value>
   </data>
-  <data name="Enrol Member" xml:space="preserve">
-    <value>Inscribir Miembro</value>
-  </data>
   <data name="First Name" xml:space="preserve">
     <value>Nombre de pila</value>
   </data>
   <data name="Last Name" xml:space="preserve">
     <value>Apellido</value>
+  </data>
+  <data name="PageResouceFile" xml:space="preserve">
+    <value>Enrol.es.resx</value>
   </data>
   <data name="Post Code" xml:space="preserve">
     <value>Código Postal</value>

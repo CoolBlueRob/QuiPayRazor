@@ -123,6 +123,9 @@
   <data name="Enrol Member" xml:space="preserve">
     <value>New Member</value>
   </data>
+  <data name="PageResouceFile" xml:space="preserve">
+    <value>Enrol.en-US.resx</value>
+  </data>
   <data name="Post Code" xml:space="preserve">
     <value>Zip Code</value>
   </data>

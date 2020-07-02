@@ -21,7 +21,7 @@ namespace QuiPayRazor.Pages.EmailAddresses
 
         public IActionResult OnGet()
         {
-        ViewData["MemberIdentityID"] = new SelectList(_context.MemberIdentity, "ID", "ID");
+        ViewData["MemberIdentityID"] = new SelectList(_context.MemberIdentity, "Id", "Id");
             return Page();
         }
 

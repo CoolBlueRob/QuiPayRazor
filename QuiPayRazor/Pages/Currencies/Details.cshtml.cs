@@ -28,7 +28,7 @@ namespace QuiPayRazor.Pages.Currencies
                 return NotFound();
             }
 
-            Currency = await _context.Currency.FirstOrDefaultAsync(m => m.ID == id);
+            Currency = await _context.Currency.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Currency == null)
             {

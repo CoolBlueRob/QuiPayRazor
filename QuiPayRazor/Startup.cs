@@ -11,7 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using QuiPayRazor.Data;
 using Microsoft.AspNetCore.Mvc.Razor;
-using QuiPayRazor.Services;
+using QuiPayRazor.Logic.Implementations;
+using QuiPayRazor.Logic.Interfaces;
 
 namespace QuiPayRazor
 {
@@ -35,9 +36,9 @@ namespace QuiPayRazor
             .AddDataAnnotationsLocalization();
 
             services.AddDbContext<QuiPayRazorContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("QuiPayRazorContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("QuiPayRazorContext"), x => x.UseNetTopologySuite()));
 
-            services.AddSingleton<CommonLocalizationService>();
+            services.AddSingleton<IPaymentNotifier, PaymentNotifier>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

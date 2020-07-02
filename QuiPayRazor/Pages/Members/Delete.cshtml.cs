@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.Members
                 return NotFound();
             }
 
-            Member = await _context.Member.AsNoTracking().FirstOrDefaultAsync(m => m.ID == id);
+            Member = await _context.Member.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
 
             if (Member == null)
             {
@@ -63,7 +63,7 @@ namespace QuiPayRazor.Pages.Members
 
             var member = await _context.Member
                             .AsNoTracking()
-                            .FirstOrDefaultAsync(m => m.ID == id);
+                            .FirstOrDefaultAsync(m => m.Id == id);
 
             if (member == null)
             {

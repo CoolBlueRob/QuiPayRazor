@@ -29,7 +29,7 @@ namespace QuiPayRazor.Pages.Vouchers
                 return NotFound();
             }
 
-            Voucher = await _context.Voucher.FirstOrDefaultAsync(m => m.ID == id);
+            Voucher = await _context.Voucher.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Voucher == null)
             {

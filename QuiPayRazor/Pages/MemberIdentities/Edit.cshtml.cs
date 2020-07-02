@@ -31,13 +31,13 @@ namespace QuiPayRazor.Pages.MemberIdentities
             }
 
             MemberIdentity = await _context.MemberIdentity
-                .Include(m => m.Member).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(m => m.Member).FirstOrDefaultAsync(m => m.Id == id);
 
             if (MemberIdentity == null)
             {
                 return NotFound();
             }
-           ViewData["MemberID"] = new SelectList(_context.Member, "ID", "ID");
+           ViewData["MemberID"] = new SelectList(_context.Member, "Id", "Id");
             return Page();
         }
 
@@ -58,7 +58,7 @@ namespace QuiPayRazor.Pages.MemberIdentities
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MemberIdentityExists(MemberIdentity.ID))
+                if (!MemberIdentityExists(MemberIdentity.Id))
                 {
                     return NotFound();
                 }
@@ -73,7 +73,7 @@ namespace QuiPayRazor.Pages.MemberIdentities
 
         private bool MemberIdentityExists(int id)
         {
-            return _context.MemberIdentity.Any(e => e.ID == id);
+            return _context.MemberIdentity.Any(e => e.Id == id);
         }
     }
 }

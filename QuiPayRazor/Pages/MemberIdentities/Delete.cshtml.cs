@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.MemberIdentities
             }
 
             MemberIdentity = await _context.MemberIdentity
-                .Include(m => m.Member).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(m => m.Member).FirstOrDefaultAsync(m => m.Id == id);
 
             if (MemberIdentity == null)
             {

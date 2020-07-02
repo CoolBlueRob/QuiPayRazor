@@ -56,7 +56,7 @@ namespace QuiPayRazor.Pages.Members
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MemberExists(Member.ID))
+                if (!MemberExists(Member.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace QuiPayRazor.Pages.Members
 
         private bool MemberExists(int id)
         {
-            return _context.Member.Any(e => e.ID == id);
+            return _context.Member.Any(e => e.Id == id);
         }
     }
 }

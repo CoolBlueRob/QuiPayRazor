@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.Accounts
                 return NotFound();
             }
 
-            Account = await _context.Account.FirstOrDefaultAsync(m => m.ID == id);
+            Account = await _context.Account.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Account == null)
             {
@@ -56,7 +56,7 @@ namespace QuiPayRazor.Pages.Accounts
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(Account.ID))
+                if (!AccountExists(Account.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace QuiPayRazor.Pages.Accounts
 
         private bool AccountExists(int id)
         {
-            return _context.Account.Any(e => e.ID == id);
+            return _context.Account.Any(e => e.Id == id);
         }
     }
 }

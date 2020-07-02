@@ -11,7 +11,7 @@ namespace QuiPayRazor.Models
     public class EmailAddress
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Timestamp]
         public byte[] RowVersion { get; set; }
@@ -25,7 +25,7 @@ namespace QuiPayRazor.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime WhenCreated { get; set; }
 
-        public int MemberIdentityID { get; set; }
+        public int MemberIdentityId { get; set; }
 
         public virtual MemberIdentity MemberIdentity { get; set; }
     }

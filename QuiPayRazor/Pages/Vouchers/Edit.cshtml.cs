@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.Vouchers
                 return NotFound();
             }
 
-            Voucher = await _context.Voucher.FirstOrDefaultAsync(m => m.ID == id);
+            Voucher = await _context.Voucher.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Voucher == null)
             {
@@ -56,7 +56,7 @@ namespace QuiPayRazor.Pages.Vouchers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!VoucherExists(Voucher.ID))
+                if (!VoucherExists(Voucher.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace QuiPayRazor.Pages.Vouchers
 
         private bool VoucherExists(int id)
         {
-            return _context.Voucher.Any(e => e.ID == id);
+            return _context.Voucher.Any(e => e.Id == id);
         }
     }
 }

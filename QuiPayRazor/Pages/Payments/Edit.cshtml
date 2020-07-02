@@ -13,26 +13,26 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Payment.ID" />
+            <input type="hidden" asp-for="Payment.Id" />
             <div class="form-group">
                 <label asp-for="Payment.PaymentState" class="control-label"></label>
                 <select asp-for="Payment.PaymentState" class="form-control"></select>
                 <span asp-validation-for="Payment.PaymentState" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Payment.FromAccountID" class="control-label"></label>
-                <input asp-for="Payment.FromAccountID" class="form-control" />
-                <span asp-validation-for="Payment.FromAccountID" class="text-danger"></span>
+                <label asp-for="Payment.FromAccountId" class="control-label"></label>
+                <input asp-for="Payment.FromAccountId" class="form-control" />
+                <span asp-validation-for="Payment.FromAccountId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Payment.ToAccountID" class="control-label"></label>
-                <input asp-for="Payment.ToAccountID" class="form-control" />
-                <span asp-validation-for="Payment.ToAccountID" class="text-danger"></span>
+                <label asp-for="Payment.ToAccountId" class="control-label"></label>
+                <input asp-for="Payment.ToAccountId" class="form-control" />
+                <span asp-validation-for="Payment.ToAccountId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Payment.WhenProposed" class="control-label"></label>
-                <input asp-for="Payment.WhenProposed" class="form-control" />
-                <span asp-validation-for="Payment.WhenProposed" class="text-danger"></span>
+                <label asp-for="Payment.WhenOffered" class="control-label"></label>
+                <input asp-for="Payment.WhenOffered" class="form-control" />
+                <span asp-validation-for="Payment.WhenOffered" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Payment.WhenAccepted" class="control-label"></label>
@@ -45,9 +45,9 @@
                 <span asp-validation-for="Payment.WhenDeclined" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Payment.RefundPaymentID" class="control-label"></label>
-                <input asp-for="Payment.RefundPaymentID" class="form-control" />
-                <span asp-validation-for="Payment.RefundPaymentID" class="text-danger"></span>
+                <label asp-for="Payment.RefundPaymentId" class="control-label"></label>
+                <input asp-for="Payment.RefundPaymentId" class="form-control" />
+                <span asp-validation-for="Payment.RefundPaymentId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

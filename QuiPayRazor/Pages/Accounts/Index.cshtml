@@ -23,10 +23,13 @@
                 @Html.DisplayNameFor(model => model.Account[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Account[0].CurrencyID)
+                @Html.DisplayNameFor(model => model.Account[0].CurrencyId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Account[0].Amount)
+                @Html.DisplayNameFor(model => model.Account[0].Allocated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Balance)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Account[0].WhenCreated)
@@ -47,18 +50,21 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CurrencyID)
+                @Html.DisplayFor(modelItem => item.CurrencyId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Amount)
+                @Html.DisplayFor(modelItem => item.Allocated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WhenCreated)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

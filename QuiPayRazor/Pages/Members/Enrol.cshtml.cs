@@ -141,8 +141,8 @@ namespace QuiPayRazor.Pages.Enrol
                 AccountState = AccountState.Active,
                 AccountType = Enrolment.AddressType,
                 Name = Enrolment.Title + " " + Enrolment.FirstName + " " + Enrolment.LastName,
-                CurrencyID = 1,
-                Amount = 0,
+                CurrencyId = 1,
+                Allocated = 0,
                 WhenCreated = now
             };
 
@@ -157,7 +157,7 @@ namespace QuiPayRazor.Pages.Enrol
             _context.Member.Add(member);
             await _context.SaveChangesAsync();
 
-            var memberId = member.ID;
+            var memberId = member.Id;
 
             return RedirectToPage("Members/Details/" + memberId);
         }

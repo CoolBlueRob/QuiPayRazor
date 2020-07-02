@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.PhoneNumbers
             }
 
             PhoneNumber = await _context.PhoneNumber
-                .Include(p => p.MemberIdentity).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(p => p.MemberIdentity).FirstOrDefaultAsync(m => m.Id == id);
 
             if (PhoneNumber == null)
             {

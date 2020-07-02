@@ -32,14 +32,14 @@ namespace QuiPayRazor.Pages.VoucherAccountLuts
 
             VoucherAccountLut = await _context.VoucherAccountLut
                 .Include(v => v.Account)
-                .Include(v => v.BankNote).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(v => v.BankNote).FirstOrDefaultAsync(m => m.Id == id);
 
             if (VoucherAccountLut == null)
             {
                 return NotFound();
             }
-           ViewData["AccountID"] = new SelectList(_context.Account, "ID", "ID");
-           ViewData["BankNoteID"] = new SelectList(_context.Voucher, "ID", "ID");
+           ViewData["AccountID"] = new SelectList(_context.Account, "Id", "Id");
+           ViewData["BankNoteID"] = new SelectList(_context.Voucher, "Id", "Id");
             return Page();
         }
 
@@ -60,7 +60,7 @@ namespace QuiPayRazor.Pages.VoucherAccountLuts
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!VoucherAccountLutExists(VoucherAccountLut.ID))
+                if (!VoucherAccountLutExists(VoucherAccountLut.Id))
                 {
                     return NotFound();
                 }
@@ -75,7 +75,7 @@ namespace QuiPayRazor.Pages.VoucherAccountLuts
 
         private bool VoucherAccountLutExists(int id)
         {
-            return _context.VoucherAccountLut.Any(e => e.ID == id);
+            return _context.VoucherAccountLut.Any(e => e.Id == id);
         }
     }
 }

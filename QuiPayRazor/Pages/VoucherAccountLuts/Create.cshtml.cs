@@ -21,8 +21,8 @@ namespace QuiPayRazor.Pages.VoucherAccountLuts
 
         public IActionResult OnGet()
         {
-        ViewData["AccountID"] = new SelectList(_context.Account, "ID", "ID");
-        ViewData["BankNoteID"] = new SelectList(_context.Voucher, "ID", "ID");
+        ViewData["AccountID"] = new SelectList(_context.Account, "Id", "Id");
+        ViewData["BankNoteID"] = new SelectList(_context.Voucher, "Id", "Id");
             return Page();
         }
 

@@ -27,11 +27,11 @@
             @Html.DisplayNameFor(model => model.PhoneNumber.MemberIdentity)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber.MemberIdentity.ID)
+            @Html.DisplayFor(model => model.PhoneNumber.MemberIdentity.Id)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.PhoneNumber.ID">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.PhoneNumber.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

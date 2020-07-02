@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.Payments
                 return NotFound();
             }
 
-            Payment = await _context.Payment.FirstOrDefaultAsync(m => m.ID == id);
+            Payment = await _context.Payment.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Payment == null)
             {
@@ -56,7 +56,7 @@ namespace QuiPayRazor.Pages.Payments
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PaymentExists(Payment.ID))
+                if (!PaymentExists(Payment.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace QuiPayRazor.Pages.Payments
 
         private bool PaymentExists(int id)
         {
-            return _context.Payment.Any(e => e.ID == id);
+            return _context.Payment.Any(e => e.Id == id);
         }
     }
 }

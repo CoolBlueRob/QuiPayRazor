@@ -13,7 +13,7 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MemberIdentity.ID" />
+            <input type="hidden" asp-for="MemberIdentity.Id" />
             <div class="form-group">
                 <label asp-for="MemberIdentity.MemberDetailsState" class="control-label"></label>
                 <select asp-for="MemberIdentity.MemberDetailsState" class="form-control"></select>
@@ -35,9 +35,9 @@
                 <span asp-validation-for="MemberIdentity.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MemberIdentity.MemberID" class="control-label"></label>
-                <select asp-for="MemberIdentity.MemberID" class="form-control" asp-items="ViewBag.MemberID"></select>
-                <span asp-validation-for="MemberIdentity.MemberID" class="text-danger"></span>
+                <label asp-for="MemberIdentity.MemberId" class="control-label"></label>
+                <select asp-for="MemberIdentity.MemberId" class="form-control" asp-items="ViewBag.MemberId"></select>
+                <span asp-validation-for="MemberIdentity.MemberId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MemberIdentity.WhenCreated" class="control-label"></label>

@@ -29,7 +29,7 @@ namespace QuiPayRazor.Pages.MemberIdentities
 
         public IActionResult OnGet()
         {
-        ViewData["MemberID"] = new SelectList(_context.Member, "ID", "ID");
+        ViewData["MemberID"] = new SelectList(_context.Member, "Id", "Id");
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace QuiPayRazor.Pages.MemberIdentities
             var newIdentity = new MemberIdentity();
             newIdentity.WhenCreated = DateTime.Now;
             newIdentity.MemberDetailsState = MemberDetailsState.Pending;
-            newIdentity.MemberID = 1;
+            newIdentity.MemberId = 1;
             var entry = _context.Add(newIdentity);
             entry.CurrentValues.SetValues(MemberIdentity);
             await _context.SaveChangesAsync();

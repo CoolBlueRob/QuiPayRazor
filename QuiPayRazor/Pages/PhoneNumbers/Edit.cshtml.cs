@@ -31,13 +31,13 @@ namespace QuiPayRazor.Pages.PhoneNumbers
             }
 
             PhoneNumber = await _context.PhoneNumber
-                .Include(p => p.MemberIdentity).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(p => p.MemberIdentity).FirstOrDefaultAsync(m => m.Id == id);
 
             if (PhoneNumber == null)
             {
                 return NotFound();
             }
-           ViewData["MemberIdentityID"] = new SelectList(_context.MemberIdentity, "ID", "ID");
+           ViewData["MemberIdentityID"] = new SelectList(_context.MemberIdentity, "Id", "Id");
             return Page();
         }
 
@@ -58,7 +58,7 @@ namespace QuiPayRazor.Pages.PhoneNumbers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PhoneNumberExists(PhoneNumber.ID))
+                if (!PhoneNumberExists(PhoneNumber.Id))
                 {
                     return NotFound();
                 }
@@ -73,7 +73,7 @@ namespace QuiPayRazor.Pages.PhoneNumbers
 
         private bool PhoneNumberExists(int id)
         {
-            return _context.PhoneNumber.Any(e => e.ID == id);
+            return _context.PhoneNumber.Any(e => e.Id == id);
         }
     }
 }

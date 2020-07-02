@@ -31,13 +31,13 @@ namespace QuiPayRazor.Pages.EmailAddresses
             }
 
             EmailAddress = await _context.EmailAddress
-                .Include(e => e.MemberIdentity).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(e => e.MemberIdentity).FirstOrDefaultAsync(m => m.Id == id);
 
             if (EmailAddress == null)
             {
                 return NotFound();
             }
-           ViewData["MemberIdentityID"] = new SelectList(_context.MemberIdentity, "ID", "ID");
+           ViewData["MemberIdentityID"] = new SelectList(_context.MemberIdentity, "Id", "Id");
             return Page();
         }
 
@@ -58,7 +58,7 @@ namespace QuiPayRazor.Pages.EmailAddresses
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmailAddressExists(EmailAddress.ID))
+                if (!EmailAddressExists(EmailAddress.Id))
                 {
                     return NotFound();
                 }
@@ -73,7 +73,7 @@ namespace QuiPayRazor.Pages.EmailAddresses
 
         private bool EmailAddressExists(int id)
         {
-            return _context.EmailAddress.Any(e => e.ID == id);
+            return _context.EmailAddress.Any(e => e.Id == id);
         }
     }
 }

@@ -17,13 +17,13 @@
                 @Html.DisplayNameFor(model => model.Payment[0].PaymentState)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Payment[0].FromAccountID)
+                @Html.DisplayNameFor(model => model.Payment[0].FromAccountId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Payment[0].ToAccountID)
+                @Html.DisplayNameFor(model => model.Payment[0].ToAccountId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Payment[0].WhenProposed)
+                @Html.DisplayNameFor(model => model.Payment[0].WhenOffered)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Payment[0].WhenAccepted)
@@ -32,7 +32,7 @@
                 @Html.DisplayNameFor(model => model.Payment[0].WhenDeclined)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Payment[0].RefundPaymentID)
+                @Html.DisplayNameFor(model => model.Payment[0].RefundPaymentId)
             </th>
             <th></th>
         </tr>
@@ -44,13 +44,13 @@
                 @Html.DisplayFor(modelItem => item.PaymentState)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FromAccountID)
+                @Html.DisplayFor(modelItem => item.FromAccountId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ToAccountID)
+                @Html.DisplayFor(modelItem => item.ToAccountId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WhenProposed)
+                @Html.DisplayFor(modelItem => item.WhenOffered)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WhenAccepted)
@@ -59,12 +59,12 @@
                 @Html.DisplayFor(modelItem => item.WhenDeclined)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RefundPaymentID)
+                @Html.DisplayFor(modelItem => item.RefundPaymentId)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

@@ -29,7 +29,7 @@ namespace QuiPayRazor.Pages.Payments
                 return NotFound();
             }
 
-            Payment = await _context.Payment.FirstOrDefaultAsync(m => m.ID == id);
+            Payment = await _context.Payment.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Payment == null)
             {

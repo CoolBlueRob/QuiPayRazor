@@ -21,7 +21,7 @@ namespace QuiPayRazor.Pages.PhoneNumbers
 
         public IActionResult OnGet()
         {
-        ViewData["MemberIdentityID"] = new SelectList(_context.MemberIdentity, "ID", "ID");
+        ViewData["MemberIdentityId"] = new SelectList(_context.MemberIdentity, "Id", "Id");
             return Page();
         }
 

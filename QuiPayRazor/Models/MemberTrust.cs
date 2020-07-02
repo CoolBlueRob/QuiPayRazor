@@ -9,7 +9,7 @@ namespace QuiPayRazor.Models
     public class MemberTrust
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Timestamp]
         public byte[] RowVersion { get; set; }

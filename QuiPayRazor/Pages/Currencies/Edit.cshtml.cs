@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.Currencies
                 return NotFound();
             }
 
-            Currency = await _context.Currency.FirstOrDefaultAsync(m => m.ID == id);
+            Currency = await _context.Currency.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Currency == null)
             {
@@ -56,7 +56,7 @@ namespace QuiPayRazor.Pages.Currencies
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CurrencyExists(Currency.ID))
+                if (!CurrencyExists(Currency.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace QuiPayRazor.Pages.Currencies
 
         private bool CurrencyExists(int id)
         {
-            return _context.Currency.Any(e => e.ID == id);
+            return _context.Currency.Any(e => e.Id == id);
         }
     }
 }

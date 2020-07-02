@@ -15,7 +15,7 @@ namespace QuiPayRazor.Models
     public class Voucher
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Timestamp]
         public byte[] RowVersion { get; set; }

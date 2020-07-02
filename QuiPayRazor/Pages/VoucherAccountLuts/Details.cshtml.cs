@@ -30,7 +30,7 @@ namespace QuiPayRazor.Pages.VoucherAccountLuts
 
             VoucherAccountLut = await _context.VoucherAccountLut
                 .Include(v => v.Account)
-                .Include(v => v.BankNote).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(v => v.BankNote).FirstOrDefaultAsync(m => m.Id == id);
 
             if (VoucherAccountLut == null)
             {
