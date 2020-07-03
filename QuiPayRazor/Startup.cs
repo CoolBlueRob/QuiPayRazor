@@ -13,6 +13,8 @@ using QuiPayRazor.Data;
 using Microsoft.AspNetCore.Mvc.Razor;
 using QuiPayRazor.Logic.Implementations;
 using QuiPayRazor.Logic.Interfaces;
+using AutoMapper;
+using QuiPayRazor.Mapper;
 
 namespace QuiPayRazor
 {
@@ -28,6 +30,16 @@ namespace QuiPayRazor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new Mapper.MappingProfile());
+                mc.AddProfile(new QuiPayRazor.Pages.Seller.MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
             services.AddMvc().AddViewLocalization();
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
@@ -38,7 +50,7 @@ namespace QuiPayRazor
             services.AddDbContext<QuiPayRazorContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("QuiPayRazorContext"), x => x.UseNetTopologySuite()));
 
-            services.AddSingleton<IPaymentNotifier, PaymentNotifier>();
+            services.AddSingleton<IPaymentOfferedNotifier, PaymentOfferedNotifier>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

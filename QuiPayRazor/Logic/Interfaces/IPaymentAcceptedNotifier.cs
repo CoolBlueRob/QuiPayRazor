@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace QuiPayRazor.Logic.Interfaces
 {
-    public interface IPaymentNotifier
+    public interface IPaymentAcceptedNotifier
     {
-        void NotifyPaymentOffered(Payment payment);
+        void NotifyPaymentAccepted(Payment payment);
     }
 }

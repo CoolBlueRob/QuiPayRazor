@@ -7,9 +7,9 @@ using QuiPayRazor.Models;
 
 namespace QuiPayRazor.Logic.Implementations
 {
-    class PaymentNotifier : IPaymentNotifier
+    class PaymentAcceptedNotifier : IPaymentAcceptedNotifier
     {
-        public void NotifyPaymentOffered(Payment payment)
+        public void NotifyPaymentAccepted(Payment payment)
         {
 
         }

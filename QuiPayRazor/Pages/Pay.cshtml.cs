@@ -50,11 +50,11 @@ namespace QuiPayRazor.Pages
     {
         private readonly QuiPayRazorContext _context;
 
-        private IPaymentNotifier _iPaymentNotifier;
+        private IPaymentOfferedNotifier _iPaymentNotifier;
 
         private ILogger _logger;
 
-        public PayModel(ILogger<PayModel> logger, QuiPayRazorContext context, IPaymentNotifier iPaymentNotifier)
+        public PayModel(ILogger<PayModel> logger, QuiPayRazorContext context, IPaymentOfferedNotifier iPaymentNotifier)
         {
             _logger = logger;
             _context = context;
