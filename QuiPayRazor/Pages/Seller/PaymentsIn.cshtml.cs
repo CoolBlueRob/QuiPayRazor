@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -50,7 +51,7 @@ namespace QuiPayRazor.Pages.Seller
         private readonly IMapper _mapper;
 
         [BindProperty]
-        public SellerVM SellerVM { get; set; }
+        public Member Member { get; set; }
 
         public PaymentsInModel(ILogger<PaymentsInModel> logger, IMapper mapper, QuiPayRazorContext context)
         {
@@ -61,13 +62,15 @@ namespace QuiPayRazor.Pages.Seller
 
         public void OnGet(int memberId)
         {
-            var seller = _context.Member.Find(memberId);
-            if( seller == null)
+            //var Member = _context.Member.Find(memberId);
+            var query = _context.Member.Include(m => m.Accounts);
+            var list = query.ToList();
+            var Member = query.FirstOrDefault(m => m.Id == memberId);
+    
+            if ( Member == null)
             {
-
+                _logger.LogError("PaymentInModel.OnGet Member is null");
             }
-
-            SellerVM sellerVM = _mapper.Map<SellerVM>(seller);
         }
     }
 }

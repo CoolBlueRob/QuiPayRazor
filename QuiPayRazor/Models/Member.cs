@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,8 +24,10 @@ namespace QuiPayRazor.Models
 
         public DateTime WhenCreated { get; set; }
 
+        [InverseProperty("Member")]
         public ICollection<Account> Accounts { get; set; }
 
+        [InverseProperty("Member")]
         public ICollection<MemberIdentity> MemberIdentitys { get; set; }
     }
 }

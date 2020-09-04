@@ -26,10 +26,12 @@ namespace QuiPayRazor.Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        public int MemberId { get; set; }
+        [ForeignKey("Id")]
+        public int? MemberId { get; set; }
         public virtual Member Member { get; set; }
 
-        public int CurrencyId { get; set; }
+        [ForeignKey("Id")]
+        public int? CurrencyId { get; set; }
         public virtual Currency Currency { get; set; }
 
         [DataType(DataType.Currency)]
@@ -49,9 +51,9 @@ namespace QuiPayRazor.Models
         public DateTime WhenCreated { get; set; }
 
         [InverseProperty("ToAccount")]
-        virtual public List<Payment> ToAccounts { get; set; }
+        virtual public List<Payment> PaymentsIn { get; set; }
 
         [InverseProperty("FromAccount")]
-        virtual public List<Payment> FromAccounts { get; set; }
+        virtual public List<Payment> PaymentsOut { get; set; }
     }
 }
